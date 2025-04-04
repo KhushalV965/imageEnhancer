@@ -9,7 +9,7 @@ function Home() {
     return (
         <>
             <ImageUpload />
-            <ImagePreview />
+            <ImagePreview loading={loading} uploaded={uploadedImage} enhanced={enhancedImage} />
         </>
     )
 }
