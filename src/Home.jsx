@@ -5,8 +5,8 @@ import ImagePreview from './ImagePreview'
 function Home() {
     return (
         <>
-            <ImageUpload/>
-            <ImagePreview/>
+            <ImageUpload />
+            <ImagePreview />
         </>
     )
 }
