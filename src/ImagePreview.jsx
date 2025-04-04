@@ -14,7 +14,10 @@ function ImagePreview() {
       {/* Enhanced Image */}
       <div className="bg-white shadow-lg rounded-xl overflow-hidden ">
         <h2 className='text-xl font-semibold text-center bg-blue-800 text-white'>Enhanced Image</h2>
-        <img src="" alt="" className='w-full h-full object-cover' />
+        {/* <img src="" alt="" className='w-full h-full object-cover' /> */}
+        <div className="flex items-center justify-center h-80 bg-zinc-200">
+          No Enhanced Image
+        </div>
       </div>
     </div>
   )
