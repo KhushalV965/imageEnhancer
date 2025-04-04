@@ -4,10 +4,10 @@ import ImagePreview from './ImagePreview'
 
 function Home() {
     return (
-        <div>
+        <>
             <ImageUpload/>
             <ImagePreview/>
-        </div>
+        </>
     )
 }
 
