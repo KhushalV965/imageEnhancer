@@ -8,10 +8,10 @@ function Home() {
     const [loading, setLoading] = useState(false);
 
 
-    const uploadImageHandler=(file)=>{}
+    const uploadImageHandler = (file) => { }
     return (
         <>
-            <ImageUpload uploadImageHandler={uploadImageHandler}/>
+            <ImageUpload uploadImageHandler={uploadImageHandler} />
             <ImagePreview loading={loading} uploaded={uploadedImage} enhanced={enhancedImage} />
         </>
     )
