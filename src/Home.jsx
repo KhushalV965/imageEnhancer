@@ -8,7 +8,11 @@ function Home() {
     const [loading, setLoading] = useState(false);
 
 
-    const uploadImageHandler = (file) => { }
+    const uploadImageHandler = (file) => {
+        setUploadedImage(URL.createObjectURL(file));
+        setLoading(true);
+        // call the api to enhance the image
+     }
     return (
         <>
             <ImageUpload uploadImageHandler={uploadImageHandler} />
