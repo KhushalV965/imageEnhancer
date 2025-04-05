@@ -1,5 +1,4 @@
-import React from 'react'
-
+import Loading from './Loading'
 function ImagePreview(props) {
   return (
     <div className='mt-8 h-[55vh] grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl'>
@@ -19,10 +18,10 @@ function ImagePreview(props) {
         {props.enhanced && !props.loading && (<img src="" alt="" className='w-full h-full object-cover' />)
         }
 
-        {props.loading}
-        <div className="flex items-center justify-center h-full bg-zinc-200">
+        {props.loading ? <Loading /> : <div className="flex items-center justify-center h-full bg-zinc-200">
           No Enhanced Image
-        </div>
+        </div>}
+
 
       </div>
     </div>
