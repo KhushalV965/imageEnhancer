@@ -16,10 +16,13 @@ function ImagePreview(props) {
       <div className="bg-white shadow-lg rounded-xl overflow-hidden ">
         <h2 className='text-xl font-semibold text-center bg-blue-800 text-white'>Enhanced Image</h2>
 
-        {props.enhanced ? <img src="" alt="" className='w-full h-full object-cover' />
-          : <div className="flex items-center justify-center h-full bg-zinc-200">
-            No Enhanced Image
-          </div>}
+        {props.enhanced && !props.loading && (<img src="" alt="" className='w-full h-full object-cover' />)
+        }
+
+        {props.loading}
+        <div className="flex items-center justify-center h-full bg-zinc-200">
+          No Enhanced Image
+        </div>
 
       </div>
     </div>
