@@ -15,22 +15,22 @@ export const EnhanceImageApi = async (file) => {
     console.log("Error enhancing Image", error.message);
 
   }
-}
+} 
 
 const uploadImage = async (file) => {
   const formData = new FormData();
   formData.append("image_file", file);
 
-  const {data} = await axios.post(`${BASE_URL}/api/tasks/visual/scale`, formData, {
+  const { data } = await axios.post(`${BASE_URL}/api/tasks/visual/scale`, formData, {
     headers: {
       'Content-Type': 'multipart/form-data',
       'X-API-KEY': API_KEY
     }
   }
-)
-if(!data?.data?.task_id){
-  throw new Error("Failed to upload image! Task ID not found")
-}
+  )
+  if (!data?.data?.task_id) {
+    throw new Error("Failed to upload image! Task ID not found")
+  }
 
   console.log(data);
 
