@@ -16,6 +16,9 @@ function Home() {
         try {
             const enhancedURL = await EnhanceImageApi(file)
         }
+        catch(error){
+            console.log(error.message);
+        }
        
 
     }
