@@ -11,7 +11,7 @@ export const EnhanceImageApi = async (file) => {
 
     const enhancedImageData = await fetchEnhanceImage(taskId);
     console.log("Enhanced Image Data: ", enhancedImageData);
-    
+
   } catch (error) {
     console.log("Error enhancing Image", error.message);
 
