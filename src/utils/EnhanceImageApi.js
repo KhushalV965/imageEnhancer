@@ -11,11 +11,12 @@ export const EnhanceImageApi = async (file) => {
 
     const enhancedImageData = await fetchEnhanceImage(taskId);
     console.log("Enhanced Image Data: ", enhancedImageData);
+    
   } catch (error) {
     console.log("Error enhancing Image", error.message);
 
   }
-} 
+}
 
 const uploadImage = async (file) => {
   const formData = new FormData();
@@ -26,17 +27,25 @@ const uploadImage = async (file) => {
       'Content-Type': 'multipart/form-data',
       'X-API-KEY': API_KEY
     }
-  }
-  )
+  });
   if (!data?.data?.task_id) {
     throw new Error("Failed to upload image! Task ID not found")
   }
 
   console.log(data);
 
-  // return taskId;
+  return data.data.task_id;
 }
 
 const fetchEnhanceImage = async (taskId) => {
+  const { data } = await axios.get(`${BASE_URL}/api/tasks/visual/scale/${taskId}`, formData, {
+    headers: {
+      'X-API-KEY': API_KEY,
+    }
+  });
+  if (!data?.data?.task_id) {
+    throw new Error("Failed to fetch enhance image! image not found")
+  }
+  return data.data.image;
 
 }
