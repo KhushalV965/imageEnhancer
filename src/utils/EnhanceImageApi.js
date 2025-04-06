@@ -38,14 +38,17 @@ const uploadImage = async (file) => {
 }
 
 const fetchEnhanceImage = async (taskId) => {
-  const { data } = await axios.get(`${BASE_URL}/api/tasks/visual/scale/${taskId}`, formData, {
+  const { data } = await axios.get(`${BASE_URL}/api/tasks/visual/scale/${taskId}`, {
     headers: {
       'X-API-KEY': API_KEY,
     }
   });
-  if (!data?.data?.task_id) {
-    throw new Error("Failed to fetch enhance image! image not found")
-  }
-  return data.data.image;
 
-}
+  const imageUrl = data?.data?.image || data?.data?.output_url;
+
+  if (!imageUrl) {
+    throw new Error("Enhanced image not found in response!");
+  }
+
+  return imageUrl;
+};
