@@ -1,9 +1,9 @@
+import axios from "axios";
 
+const API_KEY = import.meta.env.PICKWISH_API_KEY;
+const BASE_URL = 'https://techhk.aoscdn.com/';
 
 export const EnhanceImageApi = async (file) => {
-
-  const API_KEY = import.meta.env.PICKWISH_API_KEY;
-  const BASE_URL = 'https://techhk.aoscdn.com/'
 
   try {
     const taskId = await uploadImage(file);
@@ -18,6 +18,15 @@ export const EnhanceImageApi = async (file) => {
 }
 
 const uploadImage = async (file) => {
+  const formData = new FormData();
+  formData.append("image_file", file);
+
+  const { data } = await axios.post(`${BASE_URL}/api/tasks/visual/scale`, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      'X-API-KEY': API_KEY
+    }
+  })
 
   return taskId;
 }

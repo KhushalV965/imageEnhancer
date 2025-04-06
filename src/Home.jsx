@@ -16,10 +16,10 @@ function Home() {
         try {
             const enhancedURL = await EnhanceImageApi(file)
         }
-        catch(error){
+        catch (error) {
             console.log(error.message);
         }
-       
+
 
     }
     return (
