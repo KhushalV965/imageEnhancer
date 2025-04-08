@@ -52,3 +52,7 @@ const fetchEnhanceImage = async (taskId) => {
 
   return imageUrl;
 };
+
+const PollForEnhancedImage= async (taskId)=>{
+
+}
